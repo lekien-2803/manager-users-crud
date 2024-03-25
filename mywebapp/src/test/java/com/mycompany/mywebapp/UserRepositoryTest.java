@@ -28,6 +28,13 @@ public class UserRepositoryTest {
         user.setFirstName("Kien");
         user.setLastName("Le");
 
+        User user2 = User.builder()
+        .email("admin2@mail.com")
+        .password("abcabc")
+        .firstName("Minh Khoi")
+        .lastName("Le Tran")
+        .build();
+
         User  savedUser = repo.save(user);
 
         Assertions.assertThat(savedUser).isNotNull();

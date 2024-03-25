@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List Users</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+</head>
+<body>
+    <div class="container-fluid text-center">
+        <h1>Manager Users</h1>
+        <a th:href="@{/create-user}">Add new user</a>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>E-mail</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th></th>
+                </tr>
+                <tbody>
+                    <th:block th:each="user : ${listUsers}">
+                        <tr>
+                            <th>ID</th>
+                            <th>E-mail</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th></th>
+                        </tr>
+                    </th:block>
+                </tbody>
+            </thead>
+        </table>
+    </div>
+</body>
+</html>
