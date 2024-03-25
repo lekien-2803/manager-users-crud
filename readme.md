@@ -45,7 +45,7 @@ volumes:
 
 
 ```
-asdfasdfasdfasdf
+
 
 ### 1.3. Cài đặt config datasource trong application.properties
 
