@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Form</title>
+  <!-- Link tới Bootstrap CSS -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container">
+  <h2>User Form</h2>
+  <form th:action="@{/users/save}" th:object="${user}" method="post">
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" class="form-control" id="email" placeholder="Enter email" th:field="*{email}" required minlength="8" maxlength="45">
+    </div>
+    <div class="form-group">
+      <label for="firstName">First Name:</label>
+      <input type="text" class="form-control" id="firstName" placeholder="Enter first name" th:field="*{firstName}" required minlength="2" maxlength="45">
+    </div>
+    <div class="form-group">
+      <label for="lastName">Last Name:</label>
+      <input type="text" class="form-control" id="lastName" placeholder="Enter last name" th:field="*{lastName}" required minlength="2" maxlength="45">
+    </div>
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input type="password" class="form-control" id="password" placeholder="Enter password" th:field="*{password}" required minlength="2" maxlength="45">
+    </div>
+    <div class="form-group form-check">
+      <input class="form-check-input" type="checkbox" id="enabled" th:field="*{enabled}">
+      <label class="form-check-label" for="enabled">Enabled</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+    <a th:href="@{/users}" class="btn btn-secondary">Cancel</a>
+  </form>
+</div>
+
+<!-- Link tới Bootstrap JS và jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>

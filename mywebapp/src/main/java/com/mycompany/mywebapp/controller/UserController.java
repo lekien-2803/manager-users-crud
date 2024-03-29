@@ -10,6 +10,9 @@ import com.mycompany.mywebapp.entity.User;
 import com.mycompany.mywebapp.service.UserService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+
 
 
 @Controller
@@ -22,5 +25,19 @@ public class UserController {
         model.addAttribute("listUsers", users);
         return "list-users";
     }
+
+    @GetMapping("/users/new")
+    public String getNewUserPage(Model model) {
+        model.addAttribute("user", new User());
+        return "user-form";
+    }
+
+    @PostMapping("/users/save")
+    public String saveNewUser(User user) {
+         uService.save(user);
+        return "redirect:/users";
+    }
+    
+    
     
 }

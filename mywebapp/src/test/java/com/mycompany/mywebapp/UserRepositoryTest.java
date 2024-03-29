@@ -75,7 +75,7 @@ public class UserRepositoryTest {
     // Delete
     @Test
     public void testDelete(){
-        repo.deleteById(1);
+        repo.deleteById(2);
         Optional<User> optUser = repo.findById(1);
         Assertions.assertThat(optUser).isNotPresent();
     }

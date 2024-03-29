@@ -1,6 +1,5 @@
 package com.mycompany.mywebapp.entity;
 
-import ch.qos.logback.core.joran.event.BodyEvent;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -10,14 +9,12 @@ import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
-@Builder
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @Entity
 @Table(name = "users")
 public class User {
@@ -37,8 +34,6 @@ public class User {
    @Column(nullable = false, length = 45, name = "last_name")
     private String lastName;
 
-    
-    // private Boolean isEnabled;
-
-
+    @Column(nullable = false)
+    private boolean isEnabled;
 }

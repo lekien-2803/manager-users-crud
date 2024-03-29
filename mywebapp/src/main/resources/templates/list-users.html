@@ -9,7 +9,7 @@
 <body>
     <div class="container-fluid text-center">
         <h1>Manager Users</h1>
-        <a th:href="@{/create-user}">Add new user</a>
+        <h2><a th:href="@{/users/new}">Add new user</a></h2>
         <table class="table table-hover">
             <thead>
                 <tr>
@@ -17,16 +17,20 @@
                     <th>E-mail</th>
                     <th>First Name</th>
                     <th>Last Name</th>
+                    <th>Enabled</th>
                     <th></th>
                 </tr>
                 <tbody>
                     <th:block th:each="user : ${listUsers}">
                         <tr>
-                            <th>ID</th>
-                            <th>E-mail</th>
-                            <th>First Name</th>
-                            <th>Last Name</th>
-                            <th></th>
+                            <td th:text="${user.id}"></td>
+                            <td th:text="${user.email}"></td>
+                            <td th:text="${user.firstName}"></td>
+                            <td th:text="${user.lastName}"></td>
+                            <td th:text="${user.isEnabled}"></td>
+                            <td><a th:href="@{'/edit-user/' + ${user.id}}">Edit</a>
+                                <a th:href="@{'/delete-user/' + ${user.id}}">Delete</a>
+                            </td>
                         </tr>
                     </th:block>
                 </tbody>
