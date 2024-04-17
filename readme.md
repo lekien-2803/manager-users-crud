@@ -11,6 +11,7 @@
 - Thymeleaf
 - MySQL JDBC Driver
 - Spring Boot DevTools (for automatic reload changes)
+- Lombok
 
 ### 1.2. Tạo database schema
 
