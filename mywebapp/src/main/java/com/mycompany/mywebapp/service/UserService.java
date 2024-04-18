@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.mycompany.mywebapp.entity.User;
 import com.mycompany.mywebapp.exception.UserNotFoundException;
-import com.mycompany.mywebapp.repostory.UserRepository;
+import com.mycompany.mywebapp.repository.UserRepository;
 
 @Service
 public class UserService {
